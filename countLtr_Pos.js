@@ -1,10 +1,8 @@
 function countletters(str) {
     var obj = {};
     var str = str.join('').toLowerCase();
-    var i = 0
-    for (char of str) {
-        obj[char] = (!obj[char] ? [i] : obj[char].concat(i));
-        i++
+    for (key in str) {
+        obj[str[key]] ? obj[str[key]].push(key) : obj[str[key]] = [key];
     }
     return obj
 }
